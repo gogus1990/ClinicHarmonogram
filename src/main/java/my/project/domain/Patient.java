@@ -11,7 +11,7 @@ import java.util.Set;
 @ToString(of = {"name", "surname", "pesel", "phone"})
 public class Patient {
 
-    Integer patientId;
+    Integer patientID;
     String name;
     String surname;
     String phone;
