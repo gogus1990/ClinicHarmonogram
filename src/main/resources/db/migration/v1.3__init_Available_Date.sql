@@ -1,4 +1,4 @@
-CREATE TABLE availableDate
+CREATE TABLE available_Date
 (
     availableDate_id SERIAL                 NOT NULL,
     doctor_id                   INT         NOT NULL,
