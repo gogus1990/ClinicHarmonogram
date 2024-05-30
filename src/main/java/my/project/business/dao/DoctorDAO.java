@@ -10,8 +10,5 @@ public interface DoctorDAO {
     Optional<Doctor> findByEmail(String email);
     Optional<Doctor> findByPWZ(String pwz);
 
-    void addNewDoctorToDataBase(Doctor doctor);
-
-    List<Doctor> findAllDoctors();
 
 }

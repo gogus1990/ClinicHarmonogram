@@ -27,22 +27,7 @@ public class DoctorRepository implements DoctorDAO {
 
     @Override
     public Optional<Doctor> findByPWZ(String pwz) {
-        return doctorJpaRepository.findByPWZ(pwz)
+        return doctorJpaRepository.findByEmail(pwz)
                 .map(doctorEntityMapper::mapFormEntity);
     }
-
-    @Override
-    public void addNewDoctorToDataBase(Doctor doctor) {
-        DoctorEntity doctorEntity = doctorEntityMapper.mapToEntity(doctor);
-        doctorJpaRepository.save(doctorEntity);
-    }
-
-    @Override
-    public List<Doctor> findAllDoctors() {
-       return doctorJpaRepository.findAll().stream()
-                .map(a-> doctorEntityMapper.mapFormEntity(a))
-                .toList();
-    }
-
-
 }

@@ -12,11 +12,10 @@ import java.util.Optional;
 public interface DoctorJpaRepository extends JpaRepository<DoctorEntity, Integer> {
 
     Optional<DoctorEntity> findByEmail(String email);
-    Optional<DoctorEntity> findByPWZ(String email);
+    Optional<DoctorEntity> findByPwz(String pwz);
 
-    List<DoctorEntity> findAll();
 
-   void addNewDoctorToDataBase(Doctor doctor);
+
 
 
 
