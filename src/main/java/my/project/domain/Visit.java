@@ -2,12 +2,16 @@ package my.project.domain;
 
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @With
 @Value
 @Builder
-@EqualsAndHashCode(of = {"availableDate_id", "patientID"})
-@ToString(of = {"availableDate_id", "patientID"})
+@EqualsAndHashCode(of = {"availableDateID", "patientID"})
+@ToString(of = {"availableDateID", "patientID"})
 public class Visit {
-    int availableDate_id;
-    int patientID;
+
+    Integer VisitID;
+    LocalDateTime availableDateID;
+    Integer patientID;
 }

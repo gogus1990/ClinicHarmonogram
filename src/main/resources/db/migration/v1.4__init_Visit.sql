@@ -1,8 +1,8 @@
 CREATE TABLE visit
 (
-    visit_id SERIAL                 NOT NULL,
-    availableDate_id    INT         NOT NULL,
-    patient_id          INT         NOT NULL,
+    visit_id            SERIAL                      NOT NULL,
+    availableDate_id    TIMESTAMP WITH TIME ZONE    NOT NULL,
+    patient_id          INT                         NOT NULL,
     PRIMARY KEY (visit_id),
     CONSTRAINT fk_visit_patient
         FOREIGN KEY (patient_id)

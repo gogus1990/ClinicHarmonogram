@@ -8,6 +8,7 @@ import lombok.*;
 @EqualsAndHashCode(of = {"visitID", "patientID"})
 @ToString(of = {"visitID", "patientID"})
 public class History {
-    int visitID;
-    int patientID;
+    Integer historyID;
+    Integer visitID;
+    Integer patientID;
 }
