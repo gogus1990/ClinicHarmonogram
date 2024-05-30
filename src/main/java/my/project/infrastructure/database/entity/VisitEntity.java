@@ -1,7 +1,9 @@
-package my.project.infrastructure.dataBase;
+package my.project.infrastructure.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -9,17 +11,17 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "patient_history")
-@EqualsAndHashCode(of = "patient_historyID")
-public class HistoryEntity {
+@Table(name = "visit")
+@EqualsAndHashCode(of = "visitID")
+public class VisitEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "patient_history_id")
-    private Integer patient_historyID;
-
     @Column(name = "visit_id")
     private Integer visitID;
+
+    @Column(name = "availableDate_id")
+    private LocalDateTime availableDateID;
 
     @Column(name = "patient_id")
     private Integer patientID;

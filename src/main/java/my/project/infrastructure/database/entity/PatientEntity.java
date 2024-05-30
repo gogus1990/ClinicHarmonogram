@@ -1,4 +1,4 @@
-package my.project.infrastructure.dataBase;
+package my.project.infrastructure.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -9,14 +9,14 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "doctor")
-@EqualsAndHashCode(of = "doctorID")
-public class DoctorEntity {
+@Table(name = "patient")
+@EqualsAndHashCode(of = "patientID")
+public class PatientEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "doctor_id")
-    private Integer doctorID;
+    @Column(name = "patient_id")
+    private Integer patientID;
 
     @Column(name = "name")
     private String name;
@@ -30,9 +30,6 @@ public class DoctorEntity {
     @Column(name = "email")
     private String email;
 
-    @Column(name = "PWZ")
-    private String pwz;
-
-    @Column(name = "specialization")
-    private String specialization;
+    @Column(name = "pesel")
+    private String pesel;
 }

@@ -1,4 +1,4 @@
-package my.project.infrastructure.dataBase;
+package my.project.infrastructure.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -27,6 +27,6 @@ public class AvailableDateEntity {
     private LocalDateTime dateTime;
 
     @Column(name = "availableDate")
-    private Boolean availableDate;
+    private Boolean available;
 
 }

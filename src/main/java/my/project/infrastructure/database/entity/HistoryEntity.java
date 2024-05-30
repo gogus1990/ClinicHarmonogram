@@ -1,4 +1,4 @@
-package my.project.infrastructure.dataBase;
+package my.project.infrastructure.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -9,17 +9,17 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "visit")
-@EqualsAndHashCode(of = "visitID")
-public class VisitEntity {
+@Table(name = "patient_history")
+@EqualsAndHashCode(of = "patient_historyID")
+public class HistoryEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "patient_history_id")
+    private Integer patient_historyID;
+
     @Column(name = "visit_id")
     private Integer visitID;
-
-    @Column(name = "availableDate_id")
-    private Integer availableDateID;
 
     @Column(name = "patient_id")
     private Integer patientID;
