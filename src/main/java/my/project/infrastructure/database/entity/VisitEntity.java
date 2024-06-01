@@ -20,9 +20,9 @@ public class VisitEntity {
     @Column(name = "visit_id")
     private Integer visitID;
 
-
-    @Column(name = "availableDate_id")
-    private LocalDateTime availableDateID;
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "available_Date_id")
+    private AvailableDateEntity availableDateEntity;
 
     @Column(name = "description")
     private String description;
