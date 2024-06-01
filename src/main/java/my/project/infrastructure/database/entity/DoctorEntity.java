@@ -3,6 +3,8 @@ package my.project.infrastructure.database.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 @Getter
 @Setter
 @Builder
@@ -35,4 +37,7 @@ public class DoctorEntity {
 
     @Column(name = "specialization")
     private String specialization;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "doctorID", cascade = CascadeType.ALL)
+    private Set<AvailableDateEntity> availableDateEntities;
 }

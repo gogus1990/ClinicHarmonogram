@@ -20,8 +20,9 @@ public class AvailableDateEntity {
     @Column(name = "available_Date_id")
     private Integer available_DateID;
 
-    @Column(name = "doctor_id")
-    private Integer doctorID;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "doctor_id")
+    private DoctorEntity doctorID;
 
     @Column(name = "dateTime")
     private LocalDateTime dateTime;
@@ -30,3 +31,5 @@ public class AvailableDateEntity {
     private Boolean available;
 
 }
+
+
