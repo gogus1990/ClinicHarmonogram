@@ -20,15 +20,19 @@ public class VisitEntity {
     @Column(name = "visit_id")
     private Integer visitID;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "available_Date_id")
-    private AvailableDateEntity availableDateEntity;
 
     @Column(name = "description")
     private String description;
 
+
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "patient_id", unique = true)
+    @JoinColumn(name = "available_Date_id")
+    private AvailableDateEntity availableDateEntity;
+
+
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "patient_id")
     private PatientEntity patientEntity;
 
 

@@ -3,6 +3,8 @@ package my.project.infrastructure.database.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Set;
+
 @Getter
 @Setter
 @Builder
@@ -32,4 +34,7 @@ public class PatientEntity {
 
     @Column(name = "pesel")
     private String pesel;
+
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "patient_historyID", cascade = CascadeType.ALL)
+    private Set<HistoryEntity> historyEntities;
 }
