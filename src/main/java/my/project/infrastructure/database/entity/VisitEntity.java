@@ -20,11 +20,16 @@ public class VisitEntity {
     @Column(name = "visit_id")
     private Integer visitID;
 
+
     @Column(name = "availableDate_id")
     private LocalDateTime availableDateID;
 
-    @Column(name = "patient_id")
-    private Integer patientID;
+    @Column(name = "description")
+    private String description;
+
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "patient_id", unique = true)
+    private PatientEntity patientEntity;
 
 
 }

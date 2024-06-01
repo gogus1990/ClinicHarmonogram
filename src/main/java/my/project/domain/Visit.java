@@ -7,11 +7,12 @@ import java.time.LocalDateTime;
 @With
 @Value
 @Builder
-@EqualsAndHashCode(of = {"availableDateID", "patientID"})
-@ToString(of = {"availableDateID", "patientID"})
+@EqualsAndHashCode(of = {"availableDateID", "patient"})
+@ToString(of = {"availableDateID", "patient"})
 public class Visit {
 
     Integer VisitID;
     LocalDateTime availableDateID;
-    Integer patientID;
+    Patient patient;
+    String description;
 }
