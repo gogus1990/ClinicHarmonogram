@@ -9,4 +9,5 @@ import org.mapstruct.ReportingPolicy;
 public interface AvailableDateEntityMapper {
 
     AvailableDateEntity mapToEntity(AvailableDate availableDate);
+    AvailableDate mapFromEntity(AvailableDateEntity availableDateEntity);
 }

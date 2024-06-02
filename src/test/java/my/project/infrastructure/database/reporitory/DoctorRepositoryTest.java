@@ -30,12 +30,9 @@ class DoctorRepositoryTest {
 
     @Test
     void findByEmail() {
-        DoctorEntity doctor1 = doctor4();
-        doctorJpaRepository.save(doctor1);
-
-        Optional<DoctorEntity> byPWZ = doctorJpaRepository.findByEmail("dasdsad@dasasd.pl");
-        Assertions.assertEquals(doctor1.getPwz(), byPWZ.get().getPwz());
-        Assertions.assertEquals(doctor1.getEmail(), byPWZ.get().getEmail());
+        Optional<DoctorEntity> byEmail = doctorJpaRepository.findByEmail("colivas4@sohu.com");
+        Assertions.assertEquals("5100170165974410", byEmail.get().getPwz());
+        Assertions.assertEquals("colivas4@sohu.com", byEmail.get().getEmail());
 
 
     }

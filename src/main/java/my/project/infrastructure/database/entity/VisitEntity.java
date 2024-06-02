@@ -18,22 +18,24 @@ public class VisitEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "visit_id")
-    private Integer visitID;
-
+    private Long visitID;
 
     @Column(name = "description")
     private String description;
 
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "availableDate_id")
-    private AvailableDateEntity availableDateEntity;
-
-
-
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "patient_id")
-    private PatientEntity patientEntity;
+    private PatientEntity patient;
 
 
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
+    private DoctorEntity doctor;
+
+
+
+    @OneToOne
+    @JoinColumn(name = "available_date_id")
+    private AvailableDateEntity availableDate;
 }

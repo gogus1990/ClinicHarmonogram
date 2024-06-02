@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @ToString(of = {"visit", "patient"})
 public class Visit {
 
-    Integer VisitID;
+    Long VisitID;
     Visit visit;
     Patient patient;
     String description;

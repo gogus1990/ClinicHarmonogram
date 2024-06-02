@@ -12,27 +12,40 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @Entity
 @Table(name = "available_Date")
-@EqualsAndHashCode(of = "available_DateID")
+@EqualsAndHashCode(of = "available_date_id")
+@NamedNativeQueries(
+        {
+                @NamedNativeQuery(
+                        name = "AvailableDateEntity.findAllWhereIdNNQ",
+                        query = "SELECT * FROM available_Date WHERE doctor_id = ?1",
+                        resultClass = AvailableDateEntity.class
+                )
+        }
+)
 public class AvailableDateEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "availableDate_id")
-    private Integer available_DateID;
+    @Column(name = "available_date_id")
+    private Long available_date_id;
 
-    @Column(name = "dateTime")
-    private LocalDateTime dateTime;
+
+
+    @ManyToOne
+    @JoinColumn(name = "doctor_id")
+    private DoctorEntity doctor;
+
+
+    @Column(name = "date_time")
+    private LocalDateTime dateVisit;
 
 
     @Column(name = "availableDate")
-    private Boolean available;
+    private Boolean empty;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "doctor_id")
-    private DoctorEntity doctorID;
 
-    @OneToOne(fetch = FetchType.EAGER, mappedBy = "availableDateEntity", cascade = CascadeType.ALL)
-    private VisitEntity visitEntity;
+    @OneToOne(mappedBy = "availableDate")
+    private VisitEntity visit;
 }
 
 

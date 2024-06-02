@@ -6,7 +6,6 @@ CREATE TABLE patient
     phone                  VARCHAR(32) NOT NULL,
     email                  VARCHAR(32) NOT NULL,
     pesel                  VARCHAR(32) NOT NULL,
-    patientHistory         INT         ,
     PRIMARY KEY (patient_id),
     UNIQUE (phone),
     UNIQUE (email),
@@ -43,6 +42,7 @@ CREATE TABLE visit
     visit_id            SERIAL      NOT NULL,
     availableDate_id    INT         NOT NULL,
     patient_id          INT         NOT NULL,
+    doctor_id           INT         NOT NULL,
     description         TEXT,
     PRIMARY KEY (visit_id),
     CONSTRAINT fk_visit_patient
@@ -53,21 +53,7 @@ CREATE TABLE visit
                 REFERENCES available_Date (availableDate_id)
 
 );
-CREATE TABLE patient_history
-(
-    patient_history_id  SERIAL      NOT NULL,
-    visit_id            INT         NOT NULL,
-    patient_id          INT         NOT NULL,
 
-    PRIMARY KEY (patient_history_id),
-    CONSTRAINT fk_history_patient
-        FOREIGN KEY (patient_id)
-            REFERENCES patient (patient_id),
-    CONSTRAINT fk_history_visit
-            FOREIGN KEY (visit_id)
-                REFERENCES visit (visit_id)
-
-);
 
 insert into patient (patient_id,name, surname, phone, email, pesel) values (111 ,'Kellie','Merrell','3998283505','kmerrell0@phpbb.com','707-40-2081');
 insert into patient (patient_id,name, surname, phone, email, pesel) values (112 ,'Haley','Bownas','5674152533','hbownas1@people.com','485-84-4712');
@@ -93,20 +79,13 @@ insert into available_Date(availableDate_id, doctor_id, dateTime, availableDate)
 insert into available_Date(availableDate_id, doctor_id, dateTime, availableDate) values (119, 114, '2024-04-23 06:38:19', true);
 insert into available_Date(availableDate_id, doctor_id, dateTime, availableDate) values (120, 115, '2023-06-10 14:25:31', true);
 
-insert into visit(visit_id, availableDate_id, patient_id) values (111, 111, 111);
-insert into visit(visit_id, availableDate_id, patient_id) values (112, 112, 112);
-insert into visit(visit_id, availableDate_id, patient_id) values (113, 113, 113);
-insert into visit(visit_id, availableDate_id, patient_id) values (114, 114, 114);
-insert into visit(visit_id, availableDate_id, patient_id) values (115, 115, 115);
-insert into visit(visit_id, availableDate_id, patient_id) values (116, 116, 111);
-insert into visit(visit_id, availableDate_id, patient_id) values (117, 117, 111);
+insert into visit(visit_id, availableDate_id, patient_id, doctor_id) values (111, 111, 111, 111);
+insert into visit(visit_id, availableDate_id, patient_id, doctor_id) values (112, 112, 112, 112);
+insert into visit(visit_id, availableDate_id, patient_id, doctor_id) values (113, 113, 113, 113);
+insert into visit(visit_id, availableDate_id, patient_id, doctor_id) values (114, 114, 114, 114);
+insert into visit(visit_id, availableDate_id, patient_id, doctor_id) values (115, 115, 115, 115);
+insert into visit(visit_id, availableDate_id, patient_id, doctor_id) values (116, 116, 111, 111);
+insert into visit(visit_id, availableDate_id, patient_id, doctor_id) values (117, 117, 111, 112);
 
 
 
-insert into patient_history(patient_history_id, visit_id, patient_id) values (111, 111, 111);
-insert into patient_history(patient_history_id, visit_id, patient_id) values (112, 112, 112);
-insert into patient_history(patient_history_id, visit_id, patient_id) values (113, 113, 113);
-insert into patient_history(patient_history_id, visit_id, patient_id) values (114, 114, 114);
-insert into patient_history(patient_history_id, visit_id, patient_id) values (115, 115, 115);
-insert into patient_history(patient_history_id, visit_id, patient_id) values (116, 116, 111);
-insert into patient_history(patient_history_id, visit_id, patient_id) values (117, 117, 111);

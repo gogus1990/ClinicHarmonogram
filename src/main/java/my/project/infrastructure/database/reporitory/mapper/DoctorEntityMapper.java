@@ -1,9 +1,7 @@
 package my.project.infrastructure.database.reporitory.mapper;
 
 import my.project.domain.Doctor;
-import my.project.domain.Patient;
 import my.project.infrastructure.database.entity.DoctorEntity;
-import my.project.infrastructure.database.entity.PatientEntity;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 

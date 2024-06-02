@@ -2,7 +2,9 @@ package my.project.infrastructure.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import my.project.domain.Visit;
 
+import java.util.List;
 import java.util.Set;
 
 @Getter
@@ -18,7 +20,7 @@ public class PatientEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "patient_id")
-    private Integer patientID;
+    private Long patientID;
 
     @Column(name = "name")
     private String name;
@@ -35,5 +37,6 @@ public class PatientEntity {
     @Column(name = "pesel")
     private String pesel;
 
-
+    @OneToMany(mappedBy = "patient")
+    private List<VisitEntity> visit;
 }

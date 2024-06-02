@@ -2,6 +2,7 @@ package my.project.domain;
 
 import lombok.*;
 
+import java.util.List;
 import java.util.Set;
 
 @With
@@ -18,5 +19,5 @@ public class Patient {
     String email;
     String pesel;
 
-    Set<History> history;
+    List<Visit> visits;
 }
