@@ -61,7 +61,7 @@ class DoctorRepositoryTest {
 
         List<DoctorEntity> all = doctorJpaRepository.findAll();
 
-        Assertions.assertEquals(4, all.size());
+        Assertions.assertEquals(9, all.size());
 
     }
 

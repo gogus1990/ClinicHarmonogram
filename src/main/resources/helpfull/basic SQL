@@ -1,0 +1,16 @@
+select * from available_date as AD
+inner join doctor DR on AD.doctor_id = DR.doctor_id;
+
+select * from patient_history as PH
+inner join visit VIS on PH.visit_id = VIS.visit_id
+inner join patient PAT on PH.patient_id = PAT.patient_id
+inner join available_date AD on VIS.availableDate_id = AD.availableDate_id;
+
+select PAT.name, PAT.surname, pesel, datetime, DR.surname, pwz
+from patient_history as PH
+inner join visit VIS on PH.visit_id = VIS.visit_id
+inner join patient PAT on PH.patient_id = PAT.patient_id
+inner join available_date AD on VIS.availableDate_id = AD.availableDate_id
+inner join doctor DR on AD.doctor_id = DR.doctor_id;
+
+

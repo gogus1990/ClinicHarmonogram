@@ -38,6 +38,4 @@ public class DoctorEntity {
     @Column(name = "specialization")
     private String specialization;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "doctorID", cascade = CascadeType.ALL)
-    private Set<AvailableDateEntity> availableDateEntities;
 }
