@@ -17,7 +17,7 @@ public class AvailableDateEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "available_Date_id")
+    @Column(name = "availableDate_id")
     private Integer available_DateID;
 
     @Column(name = "dateTime")

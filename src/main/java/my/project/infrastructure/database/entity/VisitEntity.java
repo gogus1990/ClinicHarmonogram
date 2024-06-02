@@ -26,7 +26,7 @@ public class VisitEntity {
 
 
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "available_Date_id")
+    @JoinColumn(name = "availableDate_id")
     private AvailableDateEntity availableDateEntity;
 
 
