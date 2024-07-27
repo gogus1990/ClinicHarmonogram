@@ -8,6 +8,10 @@ public interface PatientDAO {
 
     Optional<Patient> findByPesel(String pesel);
     Optional<Patient> findByPhone(String phone);
-    Optional<Patient> findByEmail(String email);
+    Optional<Patient> findByEmail(String email );
+
+    void addPatientToDatabase(Patient patient);
+
+    void deletePatient(Patient patient);
 
 }

@@ -11,4 +11,9 @@ public interface AvailableDateJpaRepository extends JpaRepository<AvailableDateE
 
     List<AvailableDateEntity> findAllWhereIdNNQ(Integer ID);
 
+    List<AvailableDateEntity> findAllAvailableNNQ();
+
+    List<AvailableDateEntity> findAllAvailableBySpecNNQ(String specialization);
+
+
 }

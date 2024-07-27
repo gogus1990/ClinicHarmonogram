@@ -13,6 +13,15 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "visit")
 @EqualsAndHashCode(of = "visitID")
+@NamedNativeQueries(
+        {
+                @NamedNativeQuery(
+                        name = "VisitEntity.findAllWherePatientIDNNQ",
+                        query = "SELECT * FROM visit WHERE patient_id = ?1",
+                        resultClass = VisitEntity.class
+                )
+        }
+)
 public class VisitEntity {
 
     @Id

@@ -19,6 +19,22 @@ import java.time.LocalDateTime;
                         name = "AvailableDateEntity.findAllWhereIdNNQ",
                         query = "SELECT * FROM available_Date WHERE doctor_id = ?1",
                         resultClass = AvailableDateEntity.class
+                ),
+
+                @NamedNativeQuery(
+                        name = "AvailableDateEntity.findAllAvailableNNQ",
+                        query = "SELECT * FROM available_Date WHERE availabledate = true",
+                        resultClass = AvailableDateEntity.class
+                ),
+
+                @NamedNativeQuery(
+                        name = "AvailableDateEntity.findAllAvailableBySpecNNQ",
+                        query = """
+                                select * from available_date as available
+                                inner join doctor doc on available.doctor_id = doc.doctor_id
+                                where doc.specialization = ?1
+                                """,
+                        resultClass = AvailableDateEntity.class
                 )
         }
 )

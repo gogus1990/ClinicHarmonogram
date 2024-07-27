@@ -14,7 +14,7 @@ import org.springframework.test.context.TestPropertySource;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+
 @DataJpaTest
 @TestPropertySource(locations = "classpath:application-test.yml")
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
@@ -25,12 +25,13 @@ class AvailableDateRepositoryTest {
     private AvailableDateJpaRepository availableDateJpaRepository;
 
     @Test
-    void foundAllAvailableDate(){
+    void foundAllAvailableDateByDoctorID(){
         List<AvailableDateEntity> allWhereIdNNQ = availableDateJpaRepository.findAllWhereIdNNQ(111);
         allWhereIdNNQ.forEach(System.out::println);
 
         Assertions.assertEquals(2, allWhereIdNNQ.size());
 
     }
+
 
 }

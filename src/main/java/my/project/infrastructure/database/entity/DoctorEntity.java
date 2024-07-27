@@ -15,6 +15,16 @@ import java.util.Set;
 @Entity
 @Table(name = "doctor")
 @EqualsAndHashCode(of = "doctorID")
+@NamedNativeQueries(
+        {
+                @NamedNativeQuery(
+                        name = "DoctorEntity.findAllWhereIdNNQ",
+                        query = "SELECT * FROM doctor WHERE doctor_specialization = ?1",
+                        resultClass = DoctorEntity.class
+                )
+        }
+        )
+
 public class DoctorEntity {
 
     @Id
